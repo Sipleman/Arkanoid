@@ -20,7 +20,7 @@ public class Ball extends GameObject {
 		if(x<=0) velocityX*=-1;
 		if(x>=Game.WIDTH-16) velocityX*=-1;
 		if(y<=0) velocityY*=-1;
-		if(y>=Game.HEIGHT-40) velocityY*=-1;
+		if(y>=Game.HEIGHT-40){velocityY*=-1;Game.gameOver();}
 		rect.x=x;
 		rect.y=y;
 	}

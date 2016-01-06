@@ -22,8 +22,8 @@ public class Handler {
 						System.out.println(temp.rect.x + " " + temp.rect.y);
 						System.out.println(blocks.get(j).rect.x + " " + blocks.get(j).rect.y );
 						blocks.remove(j);
-						
-							temp.velocityY*=-1;					}
+						temp.velocityY*=-1;				
+					}
 				}
 			}
 		}

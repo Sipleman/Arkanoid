@@ -14,7 +14,8 @@ public class Game extends Canvas implements Runnable {
 
 	private Thread thread;
 	private Handler handler;
-
+	private static boolean isGameOver=false;
+	
 	public Game() {
 
 		handler = new Handler();
@@ -23,7 +24,7 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		window.setFocusable(true);
 		
-		Racket r = new Racket(Game.WIDTH / 2, Game.HEIGHT - 64, ID.Racket);
+		Racket r = new Racket(Game.WIDTH / 2, Game.HEIGHT - 48, ID.Racket);
 		Ball b = new Ball(Game.WIDTH/2,Game.HEIGHT/2,ID.Ball);
 		for(int i=0;i<Game.WIDTH/48;i++){
 			for(int j=0;j<5;j++){
@@ -51,7 +52,9 @@ public class Game extends Canvas implements Runnable {
 			e.printStackTrace();
 		}
 	}
-
+	public static void gameOver(){
+		isGameOver=true;
+	}
 	@Override
 	public void run() {
 		long lastTime = System.nanoTime();
@@ -102,6 +105,6 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	public static void main(String args[]) {
-		Game game = new Game();
+		new Game();
 	}
 }

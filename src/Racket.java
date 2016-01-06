@@ -17,9 +17,14 @@ public class Racket extends GameObject {
 	@Override
 	public void tick() {
 		x += velocityX;
+		x=checkEdge(x,Game.WIDTH-w,0);
 		rect.x=x;
 	}
-
+	private static int checkEdge(int val,int max,int min){
+		if(val>max) return max;
+		else if(val<min) return min;
+		else return val;
+	}
 	@Override
 	public void render(Graphics g) {
 		g.setColor(Color.black);
