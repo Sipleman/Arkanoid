@@ -14,7 +14,7 @@ public class Handler {
 			temp.tick();
 			if(temp.id==ID.Ball){
 				if(temp.rect.intersects(Player.rect)){
-					temp.velocityX*=-1;
+					temp.velocityX*=1;
 					temp.velocityY*=-1;
 				}
 				for(int j=0;j<blocks.size();j++){
@@ -23,7 +23,7 @@ public class Handler {
 						System.out.println(blocks.get(j).rect.x + " " + blocks.get(j).rect.y );
 						blocks.remove(j);
 						
-					}
+							temp.velocityY*=-1;					}
 				}
 			}
 		}

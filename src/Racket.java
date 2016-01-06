@@ -11,7 +11,7 @@ public class Racket extends GameObject {
 		rect = new Rectangle(x, y, w, h);
 		velocityY = 0;
 		velocityX = 0;
-		Speed=4;
+		Speed=5;
 	}
 
 	@Override
